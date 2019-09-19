@@ -16,9 +16,10 @@ public class SingletonTest07 {
 }
 
 // 静态内部类完成， 推荐使用
+//懒加载：外部类装载的时候静态内部类不会装载
+//线程安全：静态内部类初始化时JVM保证了线程安全
 class Singleton {
-	private static volatile Singleton instance;
-	
+
 	//构造器私有化
 	private Singleton() {}
 	
@@ -29,7 +30,7 @@ class Singleton {
 	
 	//提供一个静态的公有方法，直接返回SingletonInstance.INSTANCE
 	
-	public static synchronized Singleton getInstance() {
+	public static  Singleton getInstance() {
 		
 		return SingletonInstance.INSTANCE;
 	}
