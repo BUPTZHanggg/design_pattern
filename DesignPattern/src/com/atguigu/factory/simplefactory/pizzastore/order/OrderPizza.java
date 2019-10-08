@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
+import com.atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;
+import com.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
+import com.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
 import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
 public class OrderPizza {
@@ -32,7 +35,7 @@ public class OrderPizza {
 //			pizza.bake();
 //			pizza.cut();
 //			pizza.box();
-//			
+//
 //		} while (true);
 //	}
 
@@ -47,13 +50,13 @@ public class OrderPizza {
 	
 	public void setFactory(SimpleFactory simpleFactory) {
 		String orderType = ""; //用户输入的
-		
+
 		this.simpleFactory = simpleFactory; //设置简单工厂对象
-		
+
 		do {
-			orderType = getType(); 
+			orderType = getType();
 			pizza = this.simpleFactory.createPizza(orderType);
-			
+
 			//输出pizza
 			if(pizza != null) { //订购成功
 				pizza.prepare();
