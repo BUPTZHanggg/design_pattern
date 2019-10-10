@@ -43,7 +43,7 @@ public class Sheep implements Cloneable {
 	//克隆该实例，使用默认的clone方法来完成
 	@Override
 	protected Object clone()  {
-		
+
 		Sheep sheep = null;
 		try {
 			sheep = (Sheep)super.clone();
